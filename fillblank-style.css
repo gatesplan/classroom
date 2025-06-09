@@ -1,0 +1,553 @@
+/* 빈칸 채우기 문제 전용 CSS 스타일 */
+
+/* 기본 설정 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 페이지 구분 */
+.page-break {
+    page-break-before: always;
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* 문제 컨테이너 중앙 정렬 */
+#questions-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-break:first-child {
+    page-break-before: avoid;
+}
+
+/* 제목 페이지 */
+.title-page {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.title-page h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+}
+
+/* 개념 박스 */
+.concept {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 25px 0;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.concept h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.concept p {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+/* 코드 카드 */
+.code-card {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    overflow: hidden;
+}
+
+.code-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+}
+
+.code-card h6 {
+    font-size: 1.1em;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    font-family: 'Noto Sans KR', Arial, sans-serif;
+}
+
+.code-card pre {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 10px 0;
+}
+
+/* 섹션 (1-2단계용, 3-4단계에서는 사용 안함) */
+.section {
+    margin: 0;
+    padding: 20px 0;
+}
+
+.section h3, .section h5 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+}
+
+.section h3 {
+    font-size: 1.4em;
+    color: #3498db;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.section h4 {
+    font-size: 1.3em;
+    color: #e74c3c;
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+.section h5 {
+    font-size: 1.2em;
+    color: #f39c12;
+}
+
+/* 문제 헤더 */
+.problem-header {
+    margin-bottom: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    border-radius: 10px;
+    color: white;
+}
+
+.problem-title {
+    font-size: 1.6em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 난이도 배지 */
+.difficulty-badge {
+    font-size: 0.7em;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.difficulty-basic {
+    background: #00b894;
+    color: white;
+}
+
+.difficulty-medium {
+    background: #fdcb6e;
+    color: #2d3436;
+}
+
+.difficulty-advanced {
+    background: #e84393;
+    color: white;
+}
+
+/* 빈칸 스타일 */
+.blank-inline {
+    display: inline-block;
+    min-width: 120px;
+    height: 25px;
+    border-bottom: 2px solid #3498db;
+    margin: 0 5px;
+    background: linear-gradient(to right, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 3px 3px 0 0;
+    position: relative;
+    content: '';
+}
+
+.blank-inline:hover {
+    background: linear-gradient(to right, #e3f2fd 0%, #bbdefb 100%);
+    border-bottom-color: #2196f3;
+}
+
+.blank-large {
+    width: 100%;
+    min-height: 40px;
+    border: 2px dashed #3498db;
+    border-radius: 8px;
+    margin: 10px 0;
+    background: #f8f9fa;
+    padding: 10px;
+}
+
+.answer-line-large {
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid #3498db;
+    margin: 15px 0;
+    background: linear-gradient(to right, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* 답안 섹션 */
+.answer-section {
+    margin: 30px 0;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #27ae60;
+    position: relative;
+}
+
+.answer-section-green {
+    background: none;
+    color: #333;
+}
+
+.answer-section::before {
+    content: '✓';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #27ae60;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* 테이블 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* 리스트 */
+ul, ol {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+/* 참고 테이블 */
+.reference-table {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+.reference-table h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* 랜덤화 컨트롤 */
+.randomize-controls {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: #ecf0f1;
+    border-radius: 8px;
+}
+
+.randomize-btn {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.randomize-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 문제 항목 */
+.question-item {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.question-item:hover {
+    border-color: #3498db;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.1);
+}
+
+.question-number {
+    background: #3498db;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 0.9em;
+}
+
+/* 정답 스타일 */
+.answer-highlight {
+    background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.final-answer {
+    background: #2ecc71;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.explanation {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+/* 키워드 하이라이트 */
+.keyword {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.function {
+    color: #9b59b6;
+    font-weight: 600;
+}
+
+.string {
+    color: #27ae60;
+}
+
+.number {
+    color: #f39c12;
+    font-weight: 600;
+}
+
+.comment {
+    color: #95a5a6;
+    font-style: italic;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .page-break {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .title-page h1 {
+        font-size: 2em;
+    }
+    
+    .problem-title {
+        font-size: 1.3em;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .difficulty-badge {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    table {
+        font-size: 0.9em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+}
+
+/* 인쇄용 스타일 */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .page-break {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .randomize-controls {
+        display: none;
+    }
+    
+    .randomize-btn {
+        display: none;
+    }
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-item {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 접근성 개선 */
+.blank-inline:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+.randomize-btn:focus {
+    outline: 2px solid #74b9ff;
+    outline-offset: 2px;
+}
+
+/* 빈칸 클릭 기능 스타일 */
+.answer-hidden {
+    color: transparent;
+    background-color: #f0f0f0;
+    padding: 1px 4px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.answer-hidden:hover {
+    background-color: #e0e0e0;
+}
+
+.answer-shown {
+    color: #2c3e50 !important;
+    background-color: #e8f5e8 !important;
+    padding: 1px 4px;
+    font-weight: bold;
+    cursor: default;
+    display: inline-block;
+}
+
+/* 유틸리티 클래스 */
+.text-center {
+    text-align: center;
+}
+
+.text-large {
+    font-size: 1.2em;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.p-20 {
+    padding: 20px;
+}
