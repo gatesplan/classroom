@@ -1,0 +1,597 @@
+/* 코딩 문제 전용 CSS 스타일 */
+
+/* 기본 설정 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+/* 페이지 구분 */
+.page-break {
+    page-break-before: always;
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 900px;
+    width: 100%;
+}
+
+.page-break:first-child {
+    page-break-before: avoid;
+}
+
+/* 제목 페이지 */
+.title-page {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.title-page h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+}
+
+/* 제목 페이지 내 코드는 왼쪽 정렬 */
+.title-page .code-card {
+    text-align: left;
+}
+
+.title-page .code-card pre {
+    text-align: left;
+}
+
+/* 개념 박스 */
+.concept {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 25px 0;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.concept h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.concept p {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+/* 문제 헤더 */
+.problem-header {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    border-radius: 10px;
+    color: white;
+}
+
+.problem-title {
+    font-size: 1.6em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 난이도 배지 */
+.difficulty-badge {
+    font-size: 0.7em;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-left: 15px;
+}
+
+.difficulty-basic {
+    background: #00b894;
+    color: white;
+}
+
+.difficulty-medium {
+    background: #fdcb6e;
+    color: #2d3436;
+}
+
+.difficulty-advanced {
+    background: #e84393;
+    color: white;
+}
+
+/* 코드 카드 - 시험 환경에 맞춘 단순한 디자인 */
+.code-card {
+    background: #f8f9fa;
+    color: #333;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    position: relative;
+    overflow: hidden;
+}
+
+.code-card pre {
+    background: transparent;
+    color: #333;
+    padding: 0;
+    border-radius: 0;
+    overflow-x: auto;
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* 문법 강조 제거 - 시험 환경에 맞춘 단순한 스타일 */
+.keyword,
+.function,
+.string,
+.number,
+.comment {
+    color: #333;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 코드 내 빈칸 - 시각적으로 구분되도록 */
+.code-blank {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px dashed #3498db;
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: #3498db;
+    font-style: italic;
+}
+
+/* 코드 내 간단한 빈칸 표시 */
+.code-card pre {
+    white-space: pre-wrap;
+}
+
+.code-card pre [class*="blank"] {
+    background: rgba(255, 255, 255, 0.15);
+    color: #74b9ff;
+    border: 1px dashed #74b9ff;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* 섹션 */
+.section {
+    margin: 25px 0;
+    padding: 20px 0;
+}
+
+.section h3 {
+    font-size: 1.4em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ecf0f1;
+    display: flex;
+    align-items: center;
+}
+
+.section h3::before {
+    content: '▶';
+    color: #3498db;
+    margin-right: 10px;
+    font-size: 0.8em;
+}
+
+/* 테이블 - 코딩 문제용 스타일 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px 12px;
+    text-align: center;
+    border-bottom: 1px solid #ecf0f1;
+    font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+    vertical-align: middle;
+    min-height: 40px;
+}
+
+th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    font-family: 'Noto Sans KR', Arial, sans-serif;
+}
+
+tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+tr:hover {
+    background: #e3f2fd;
+}
+
+/* 답안 작성란 */
+.answer-section {
+    margin: 30px 0;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #27ae60;
+    background: linear-gradient(135deg, #d5f4e6 0%, #ffeaa7 100%);
+    position: relative;
+}
+
+.answer-section::before {
+    content: '✓';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #27ae60;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.answer-section-green {
+    background: linear-gradient(135deg, #d5f4e6 0%, #ffffff 100%);
+    color: #333;
+}
+
+/* 빈칸 스타일 - 코딩 문제용 */
+.blank-inline {
+    display: inline-block;
+    min-width: 150px;
+    height: 30px;
+    border-bottom: 3px solid #3498db;
+    margin: 0 8px;
+    background: linear-gradient(to right, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+    text-align: center;
+    padding: 4px;
+}
+
+.blank-inline:hover {
+    background: linear-gradient(to right, #e3f2fd 0%, #bbdefb 100%);
+    border-bottom-color: #2196f3;
+}
+
+.answer-line-large {
+    width: 100%;
+    min-height: 50px;
+    border: 2px dashed #3498db;
+    border-radius: 8px;
+    margin: 15px 0;
+    background: #f8f9fa;
+    padding: 15px;
+    font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+}
+
+/* 문제 유형별 아이콘 */
+.problem-type-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.type-calculation {
+    background: #3498db;
+}
+
+.type-line-completion {
+    background: #f39c12;
+}
+
+.type-block-completion {
+    background: #e74c3c;
+}
+
+.type-tracking {
+    background: #9b59b6;
+}
+
+.type-word-fill {
+    background: #2ecc71;
+}
+
+/* 예시 박스 */
+.example-box {
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+    border: 2px solid #27ae60;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+    position: relative;
+}
+
+.example-box::before {
+    content: '💡 예시';
+    display: block;
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 10px;
+    font-family: 'Noto Sans KR', Arial, sans-serif;
+    font-size: 0.9em;
+}
+
+/* 단계별 설명 */
+.step-explanation {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.step-explanation h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.step-explanation p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.step-explanation p:last-child {
+    margin-bottom: 0;
+}
+
+.step-explanation ol,
+.step-explanation ul {
+    margin: 12px 0;
+    padding-left: 20px;
+}
+
+.step-explanation li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.step-explanation table {
+    margin: 15px 0;
+}
+
+.step-explanation .code-card {
+    margin: 15px 0;
+}
+
+/* 코드 라인 번호 */
+.code-with-numbers {
+    counter-reset: line;
+}
+
+.code-with-numbers .code-line {
+    counter-increment: line;
+    position: relative;
+    padding-left: 40px;
+}
+
+.code-with-numbers .code-line::before {
+    content: counter(line);
+    position: absolute;
+    left: 0;
+    width: 30px;
+    text-align: right;
+    color: #95a5a6;
+    font-size: 0.9em;
+}
+
+/* 참고 자료 섹션 */
+.reference-section {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 30px 0;
+}
+
+.reference-section h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.reference-section table {
+    background: white;
+    color: #333;
+}
+
+.reference-section th {
+    background: #2c3e50;
+    color: white;
+}
+
+.reference-section td {
+    color: #333;
+    background: white;
+}
+
+.reference-section tr:nth-child(even) td {
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* 학습 목표 체크리스트 */
+.learning-objectives {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.learning-objectives ul {
+    list-style: none;
+    padding: 0;
+}
+
+.learning-objectives li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.learning-objectives li::before {
+    content: '☐';
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: #ffc107;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .page-break {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .title-page h1 {
+        font-size: 2em;
+    }
+    
+    .problem-title {
+        font-size: 1.3em;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .difficulty-badge {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    .code-card {
+        padding: 15px;
+    }
+    
+    table {
+        font-size: 0.9em;
+    }
+    
+    th, td {
+        padding: 8px 6px;
+    }
+    
+    .blank-inline {
+        min-width: 100px;
+        height: 25px;
+    }
+}
+
+/* 인쇄용 스타일 */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .page-break {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        margin: 0;
+        padding: 20px;
+        page-break-inside: avoid;
+    }
+    
+    .code-card {
+        background: #f8f9fa !important;
+        color: #333 !important;
+        border: 1px solid #ddd;
+    }
+    
+    .concept {
+        background: #f8f9fa !important;
+        color: #333 !important;
+        border: 1px solid #ddd;
+    }
+    
+    .problem-header {
+        background: #f8f9fa !important;
+        color: #333 !important;
+        border: 1px solid #ddd;
+    }
+    
+    .example-box {
+        background: #f8f9fa !important;
+        color: #333 !important;
+        border: 1px solid #ddd;
+    }
+}
+
+/* 접근성 개선 */
+.blank-inline:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* 유틸리티 클래스 */
+.text-center {
+    text-align: center;
+}
+
+.text-large {
+    font-size: 1.2em;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.monospace {
+    font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+}
